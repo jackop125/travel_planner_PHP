@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2023 at 05:11 PM
+-- Generation Time: Mar 04, 2024 at 07:16 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -35,24 +35,20 @@ CREATE TABLE `bookings` (
   `days` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,
   `mode` varchar(255) NOT NULL,
-  `location` varchar(255) NOT NULL
+  `location` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `bookings`
 --
 
-INSERT INTO `bookings` (`fullname`, `email`, `no_of_peoples`, `starting_date`, `days`, `price`, `mode`, `location`) VALUES
-('', 'aarga@mail.com', '', '2023-12-19', '', '', '', ''),
-('', 'tlsdjf@mail.com', '', '2023-12-19', '', '', '', ''),
-('', 'af@mail.com', '', '2023-12-19', '10', '39.99', 'Flight', ''),
-('CBbcbb', 'adlgkaj@mail.com', '', '2023-12-20', '10', '39.99', 'Flight', ''),
-('gafaf', 'afa@mail.com', '23', '2023-12-19', '10', '39.99', 'Flight', ''),
-('Rushikesh Gaikwad', 'rushi@mail.com', '12', '2023-12-20', '5', '19.99', 'Flight', ''),
-('Rushikehs', 'R12@mail.com', '15', '2023-12-28', '5', '19.99', 'Flight', ''),
-('rushikesh', 'rushi@mail.com', '12', '2023-12-22', '13', '49.99', 'Flight', ''),
-('', '', '', '2023-12-16', '12', '69.99', 'Flight', ''),
-('rushikesbh', 'om2@gmail.com', '23', '2023-12-11', '13', '49.99', 'Flight', 'Rishikesh');
+INSERT INTO `bookings` (`fullname`, `email`, `no_of_peoples`, `starting_date`, `days`, `price`, `mode`, `location`, `id`) VALUES
+('omkar', 'om2@gmail.com', '23', '2023-12-18', '12', '7675', 'train', 'mumbai', 13),
+('rushikesh gaikwad', 'om2@gmail.com', '45', '2023-12-08', '12', '99', 'flight', 'none', 16),
+('Rushikesh Gaikwad', 'r@mail.com', '23', '2023-12-06', '12', '99', 'Flight', 'Delhi', 17),
+('Rushikesh Gaikwad', 'rushi@mail.com', '5', '2024-03-26', '5', '19.99', 'Flight', 'Delhi', 21),
+('Jayesh Nike', 'jay@mail.com', '124', '2024-03-20', '457', '1200', 'Flight', 'Delhi', 22);
 
 -- --------------------------------------------------------
 
@@ -104,11 +100,18 @@ INSERT INTO `tb_user` (`id`, `name`, `username`, `email`, `password`) VALUES
 (8, 'nikita', 'nikki', 'nikki@gmail.com', 'niki'),
 (9, 'renuka', 'renu', 'renuka@gmail.com', '123'),
 (13, 'rishi', 'rishi124', 'rishi@mail.com', '1234'),
-(14, 'rushikesh', 'rushi', 'rushi@mail.com', '1234');
+(14, 'rushikesh', 'rushi', 'rushi@mail.com', '1234'),
+(15, 'John Doe', 'John123', 'example@mail.com', '1234');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bookings`
+--
+ALTER TABLE `bookings`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tb_user`
@@ -121,10 +124,16 @@ ALTER TABLE `tb_user`
 --
 
 --
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
